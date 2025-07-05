@@ -26,7 +26,7 @@ mongoose
     });
   })
   .catch((err) => {
-    console.error('❌ Failed to connect to MongoDB:', err);
+    console.error('Failed to connect to MongoDB:', err);
   });
 
 
@@ -105,7 +105,7 @@ app.put('/api/books/:id', async (req, res) => {
   }
 });
 
-// Delete book by ID
+// Delete book by id 
 app.delete('/api/books/:id', async (req, res) => {
   try {
     await Book.findByIdAndDelete(req.params.id);
@@ -114,6 +114,8 @@ app.delete('/api/books/:id', async (req, res) => {
     res.status(500).send({ error: 'Failed to delete book' });
   }
 });
+
+
 
 
 
